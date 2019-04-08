@@ -39,6 +39,36 @@ int main()
 			space--;
 		}
 	}
+	else if (twoSides == true)
+	{
+		int a = 1;
+		for (int i = 0; i < heigth; i++)
+		{
+			int b = a;
+			int space2 = space;
+			do
+			{
+				cout << " ";
+				space2--;
+			} while (space2 > 0);
+			do
+			{
+				cout << "#";
+				b--;
+			} while (b > 0);
+			cout << " ";
+			b = a;
+			do
+			{
+				cout << "#";
+				b--;
+			} while (b > 0);
+
+			cout << endl;
+			a++;
+			space--;
+		}
+	}
 
 	system("pause");
 	return 0;
