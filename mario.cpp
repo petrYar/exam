@@ -3,64 +3,76 @@ using namespace std;
 int main()
 {
 	int heigth;
-	bool twoSides = false;
-
+	int twoSides;
 	do
 	{
 		cout << "Enter heigth\n";
-		cin >> heigth;
+		cin >> heigth;//ввод висоти
+		if (heigth == 0)// проверка ввели ли букву
+		{
+			cin.clear();//очистка буфера
+			cin.ignore(999, '\n');// игнорирование информации в буфере
+		}
 	} while (heigth <= 0);
 	do
 	{
-		cout << "Two sides? 1 - true 0 - false\n";
-		cin >> twoSides;
-	} while (twoSides < 0 || twoSides > 1);
+		cout << "Two sides? 2 - true 1 - false\n";
+		cin >> twoSides;// ввод варианта вивода
+		if (twoSides == 0)
+		{
+			cin.clear();
+			cin.ignore(999, '\n');
+		}
+	} while (twoSides > 2 || twoSides < 1);
 
-	int space = heigth;
-	if (twoSides == false)
+
+	char space = heigth; // пробели = висоте
+
+	if (twoSides == 1)
 	{
 		int a = 1;
-		for (int i = 0; i < heigth; i++)
+		for (int i = 0; i < heigth; i++)// работать пока І не есть равно или больше чем висота
 		{
-			int b = a;
-			int space2 = space;
+			int b = a;// б = 1
+			char space2 = space;// спейс2 = висота
 			do
 			{
-				cout << " ";
+				cout << " ";// вивести пробел и уменьшить спейс2 пока не будет 0
 				space2--;
 			} while (space2 > 0);
 			do
 			{
-				cout << "#";
+				cout << "#";// виводить решетки по б != 0
 				b--;
 			} while (b > 0);
-			cout << endl;
-			a++;
-			space--;
+			cout << endl;// следующий рядок
+			a++;// увеличить кол-во решеток
+			space--;// уменьшить кол-во пробелов
 		}
 	}
-	else if (twoSides == true)
+
+	else if (twoSides == 2)
 	{
 		int a = 1;
 		for (int i = 0; i < heigth; i++)
 		{
 			int b = a;
-			int space2 = space;
+			char space2 = space;
 			do
 			{
-				cout << " ";
+				cout << " ";// вивести пробел и уменьшить спейс2 пока не будет 0
 				space2--;
 			} while (space2 > 0);
 			do
 			{
-				cout << "#";
+				cout << "#";// виводить решетки по б != 0
 				b--;
 			} while (b > 0);
-			cout << " ";
-			b = a;
+			cout << " ";// сделать пробел между пирамидками
+			b = a; // б снова есть а (било 0)
 			do
 			{
-				cout << "#";
+				cout << "#";// вивод 2 пирамидки
 				b--;
 			} while (b > 0);
 
