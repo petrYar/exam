@@ -2,6 +2,7 @@
 using namespace std;
 bool TakeNumber(int number);
 bool IsValid(int number);
+int ConvertToCoins(double number);
 int main()
 {
 	float number;
@@ -13,6 +14,9 @@ int main()
 			continue;
 		break;
 	}
+
+	int coins = ConvertToCoins(number);
+
 	system("pause");
 	return 0;
 }
@@ -33,4 +37,18 @@ bool IsValid(int number)
 		return false;
 	}
 	return true;
+}
+
+int ConvertToCoins(double number)
+{
+	int coins;
+
+	cout << "number " << number << endl;\
+
+	if (number >= 0)
+		coins = number * 100;
+
+	cout << "coins " << coins << endl;
+
+	return coins;
 }
