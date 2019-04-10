@@ -1,9 +1,7 @@
 #include <iostream>
 using namespace std;
-
 bool TakeNumber(int number);
 bool IsValid(int number);
-
 int main()
 {
 	float number;
@@ -15,7 +13,6 @@ int main()
 			continue;
 		break;
 	}
-	cout << "correct\n";
 	system("pause");
 	return 0;
 }
@@ -23,4 +20,17 @@ int main()
 bool TakeNumber(int number)
 {
 	return IsValid(number);
+}
+
+bool IsValid(int number)
+{
+	if (!cin)
+	{
+		cin.clear();
+		cout << "You entered incorrect symbol or number\n";
+		while (cin.get() != '\n')
+			continue;
+		return false;
+	}
+	return true;
 }
