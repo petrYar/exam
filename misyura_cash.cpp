@@ -62,12 +62,12 @@ int ConvertToCoins(double number)
 {
 	int coins;
 
-	cout << "number " << number << endl;\
+	cout << "number " << number << endl;
 
-	if (number >= 0)
+	if (number >= 0.01)
 		coins = number * 100;
 
-	cout << "coins " << coins << endl;
+	cout << "coins " << ++coins << endl;
 
 	return coins;
 }
